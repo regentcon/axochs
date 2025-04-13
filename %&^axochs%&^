@@ -88,7 +88,7 @@ RunService.RenderStepped:Connect(function()
             local myHRP = myChar.HumanoidRootPart
 
             -- 타겟의 뒤 4 studs 위치 + 회전까지 따라감
-            local newCF = targetHRP.CFrame * CFrame.new(0, 0, 3)
+            local newCF = targetHRP.CFrame * CFrame.new(0, 0, 3.5)
             myHRP.CFrame = newCF
         end
     end

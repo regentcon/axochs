@@ -44,10 +44,59 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/regentcon/kill/refs/h
 end,
 })
 
+
 local Button = Tab:CreateButton({
    Name = "칼로 다죽이기2(칼 꺼내기 Z,X,C,V)",
    Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/regentcon/knifekill/refs/heads/main/knifekill"))()
+end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "상대뒤로 티피",
+   Callback = function()
+-- 서비스 가져오기
+local Players = game:GetService("Players")
+local UserInputService = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+
+local localPlayer = Players.LocalPlayer
+local targetPlayer = nil
+local teleporting = false
+
+-- 타겟 플레이어 선택 (자기 자신 제외하고 아무나)
+local function pickTarget()
+    for _, player in pairs(Players:GetPlayers()) do
+        if player ~= localPlayer and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+            return player
+        end
+    end
+    return nil
+end
+
+-- 텔레포트 루프
+RunService.RenderStepped:Connect(function()
+    if teleporting and targetPlayer and targetPlayer.Character and targetPlayer.Character:FindFirstChild("HumanoidRootPart") then
+        local targetHRP = targetPlayer.Character.HumanoidRootPart
+        local behindPos = targetHRP.CFrame * CFrame.new(0, 0, 4) -- ★ 4 studs 뒤로 조정
+        localPlayer.Character:PivotTo(behindPos)
+    end
+end)
+
+-- 입력 감지 (R 토글)
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if gameProcessed then return end
+    if input.KeyCode == Enum.KeyCode.R then
+        teleporting = not teleporting
+        if teleporting then
+            targetPlayer = pickTarget()
+            print("✅ 텔레포트 ON (4 studs 뒤)")
+        else
+            print("❌ 텔레포트 OFF")
+        end
+    end
+end)
+
 end,
 })
 

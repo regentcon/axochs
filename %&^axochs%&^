@@ -59,10 +59,15 @@ local Button = Tab:CreateButton({
 local Players = game:GetService("Players")
 local UserInputService = game:GetService("UserInputService")
 local RunService = game:GetService("RunService")
+local Workspace = game:GetService("Workspace")
 
 local localPlayer = Players.LocalPlayer
+local camera = Workspace.CurrentCamera
 local targetPlayer = nil
 local teleporting = false
+
+-- 시점 고정용 변수
+local originalCameraSubject = camera.CameraSubject
 
 -- 타겟 플레이어 선택 (자기 자신 제외하고 아무나)
 local function pickTarget()
@@ -78,8 +83,14 @@ end
 RunService.RenderStepped:Connect(function()
     if teleporting and targetPlayer and targetPlayer.Character and targetPlayer.Character:FindFirstChild("HumanoidRootPart") then
         local targetHRP = targetPlayer.Character.HumanoidRootPart
-        local behindPos = targetHRP.CFrame * CFrame.new(0, 0, 4) -- ★ 4 studs 뒤로 조정
-        localPlayer.Character:PivotTo(behindPos)
+        local myChar = localPlayer.Character
+        if myChar and myChar:FindFirstChild("HumanoidRootPart") then
+            local myHRP = myChar.HumanoidRootPart
+
+            -- 타겟의 뒤 4 studs 위치 + 회전까지 따라감
+            local newCF = targetHRP.CFrame * CFrame.new(0, 0, 4)
+            myHRP.CFrame = newCF
+        end
     end
 end)
 
@@ -90,9 +101,14 @@ UserInputService.InputBegan:Connect(function(input, gameProcessed)
         teleporting = not teleporting
         if teleporting then
             targetPlayer = pickTarget()
-            print("✅ 텔레포트 ON (4 studs 뒤)")
+            if camera.CameraSubject then
+                originalCameraSubject = camera.CameraSubject
+            end
+            -- 카메라 흔들림 방지: 고정된 시점 유지
+            camera.CameraSubject = originalCameraSubject
+            print("✅ 따라가기 ON (회전 포함, 시점 고정)")
         else
-            print("❌ 텔레포트 OFF")
+            print("❌ 따라가기 OFF")
         end
     end
 end)

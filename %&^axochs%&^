@@ -701,3 +701,233 @@ local Button = Tab:CreateButton({
    end, 
 })
 
+local mainTab = Window:CreateTab("타워테러", nil) -- Title, Image
+local Section = mainTab:CreateSection("메인")
+
+local Button = mainTab:CreateButton({
+   Name = "빡종타 1 (테러 강도 하)",
+   Callback = function()
+      local poss = {
+    Vector3.new(29, 260.5, 112.04998779296875),
+    Vector3.new(29, 260.5, 107.94999694824219),
+    Vector3.new(29, 260.5, 104.04999542236328),
+    Vector3.new(29, 260.5, 96.99998474121094),
+    Vector3.new(29, 260.5, 92.99998474121094),
+    Vector3.new(29, 260.5, 85.99998474121094),
+    Vector3.new(29, 260.5, 81.99998474121094),
+    Vector3.new(29, 260.5, 74.99998474121094),
+    Vector3.new(29, 260.5, 70.99998474121094)
+}
+
+_G.Parts = {}
+
+for _, part in ipairs(workspace:GetChildren()) do
+    if part:IsA('BasePart') and table.find(poss, part.Position) then
+        warn(part)
+        table.insert(_G.Parts, part)
+    end
+end
+print('done!!')
+table.foreach(_G.Parts, print)
+
+
+while task.wait(.1) do
+for _, part in ipairs(_G.Parts) do
+firetouchinterest(game.Players.LocalPlayer.Character.Head, part, 0)
+task.wait(.1)
+firetouchinterest(game.Players.LocalPlayer.Character.Head, part, 1)
+end
+end
+   end,
+})
+
+local Button = mainTab:CreateButton({
+   Name = "빡종타 2 (테러 강도 하)",
+   Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/j8WFMfYP"))()
+   end,
+})
+
+local Button = mainTab:CreateButton({
+   Name = "공부 타워 (테러 강도 상)",
+   Callback = function()
+   local poss = {
+    Vector3.new(-383.888214, 44.5067635, 74.1641541, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-392.693909, 45.5067558, 74.1641541, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-401.960571, 46.4828911, 74.1641541, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-410.766235, 47.4828835, 74.1641541, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-418.753021, 48.5947037, 74.1641541, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-428.019684, 49.5708389, 74.1641541, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-371.761017, 135.5, 19.6641541, -1.1920929e-07, 0, -1.00000012, 0, 1, 0, 1.00000012, 0, -1.1920929e-07),
+    Vector3.new(-371.761017, 136.500015, 20.6641541, -1.1920929e-07, 0, -1.00000012, 0, 1, 0, 1.00000012, 0, -1.1920929e-07),
+    Vector3.new(-371.761017, 137.5, 21.6641541, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-371.761017, 138.500031, 22.6641541, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-371.761017, 139.500015, 23.6641541, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-371.761017, 140.500015, 24.6641541, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-371.761017, 141.500015, 25.6641541, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-371.761017, 142.500015, 26.6641541, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-371.761017, 143.500031, 27.6641541, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-371.761017, 144.500031, 28.6641541, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-371.761017, 144.500031, 28.6641541, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+     Vector3.new(-371.761017, 146.500031, 30.6641541, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+     Vector3.new(-371.761017, 147.500031, 31.6641541, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+     Vector3.new(-371.761017, 147.500031, 31.6641541, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+     Vector3.new(-371.761017, 149.500031, 33.6641541, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+     Vector3.new(-371.761017, 150.500031, 34.6641541, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+     Vector3.new(-371.761017, 151.500015, 36.6641579, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+     Vector3.new(-371.761017, 150.500015, 38.6641579, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+     Vector3.new(-371.761017, 151.500031, 60.6641579, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+     Vector3.new(-371.761017, 152.500031, 62.6641579, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+     Vector3.new(-371.761017, 151.500031, 64.6641541, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+     Vector3.new(-371.761017, 152.500031, 66.6641541, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+}
+
+_G.Parts = {}
+
+for _, part in ipairs(workspace:GetChildren()) do
+    if part:IsA('BasePart') and table.find(poss, part.Position) then
+        warn(part)
+        table.insert(_G.Parts, part)
+    end
+end
+table.foreach(_G.Parts, print)
+
+
+while task.wait(.1) do
+for _, part in ipairs(_G.Parts) do
+firetouchinterest(game.Players.LocalPlayer.Character.Head, part, 0)
+task.wait(.1)
+firetouchinterest(game.Players.LocalPlayer.Character.Head, part, 1)
+end
+end
+   end,
+})
+
+local Button = mainTab:CreateButton({
+   Name = "트롤하는 타워 (테러 강도 상)",
+   Callback = function()
+      local poss = {
+    Vector3.new(-441.328552, -389.156494, 211.326096, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-485.828552, -294.424194, 112.325119, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-472.828552, -294.424194, 112.325119, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-459.828552, -294.424194, 112.325119, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-498.828552, -231.691925, 191.826096, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-498.828552, -231.691925, 196.826096, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-498.828552, -231.691925, 205.826096, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-454.828552, -203.69194, 213.826096, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-446.828552, -203.69194, 213.826096, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-438.828552, -203.69194, 213.826096, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-430.828644, -203.69194, 213.826096, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-402.479187, 485.468506, 167.826096, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-556.828552, -72.9596252, 165.326004, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+    Vector3.new(-556.828552, -72.9596252, 155.326004, -1, 0, 0, 0, 1, 0, 0, 0, -1),
+    Vector3.new(-556.828552, -73.4596252, 145.326004, -1, 0, 0, 0, 1, 0, 0, 0, -1),
+    Vector3.new(-556.828552, -73.4596252, 135.326004, -1, 0, 0, 0, 1, 0, 0, 0, -1),
+    Vector3.new(-402.479187, 485.468506, 157.826096, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+     Vector3.new(-402.479187, 485.468506, 147.826096, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+}
+
+_G.Parts = {}
+
+for _, part in ipairs(workspace:GetChildren()) do
+    if part:IsA('BasePart') and table.find(poss, part.Position) then
+        warn(part)
+        table.insert(_G.Parts, part)
+    end
+end
+table.foreach(_G.Parts, print)
+
+
+while task.wait(.1) do
+for _, part in ipairs(_G.Parts) do
+firetouchinterest(game.Players.LocalPlayer.Character.Head, part, 0)
+task.wait(.1)
+firetouchinterest(game.Players.LocalPlayer.Character.Head, part, 1)
+end
+end
+   end,
+})
+
+local Button = mainTab:CreateButton({
+   Name = "하꼬들은 못 깨는 타워 (테러 강도 하)",
+   Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/Chm789wK"))()
+   end,
+})
+
+local Button = mainTab:CreateButton({
+   Name = "학생은 못 깨는 타워 (테러 강도 중)",
+   Callback = function()
+      local poss = {
+    Vector3.new(-156.669403, 80.5, 148.870422, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+    Vector3.new(-156.669403, 80.5, 164.870483, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+    Vector3.new(-156.669403, 80.5, 180.870483, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+    Vector3.new(-156.669403, 80.5, 214.870483, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+    Vector3.new(-156.669403, 80.5, 196.870483, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+    Vector3.new(-273.169434, 242.5, 206.417633, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+    Vector3.new(-273.169434, 242.5, 188.417679, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+    Vector3.new(-273.169434, 242.5, 170.417664, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+    Vector3.new(-273.169434, 242.5, 152.417664, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+    Vector3.new(-273.169434, 242.5, 134.917664, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+    Vector3.new(-273.169434, 242.5, 116.417656, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+}
+
+_G.Parts = {}
+
+for _, part in ipairs(workspace:GetChildren()) do
+    if part:IsA('BasePart') and table.find(poss, part.Position) then
+        warn(part)
+        table.insert(_G.Parts, part)
+    end
+end
+print('done!!')
+table.foreach(_G.Parts, print)
+
+
+while task.wait(.1) do
+for _, part in ipairs(_G.Parts) do
+firetouchinterest(game.Players.LocalPlayer.Character.Head, part, 0)
+task.wait(.1)
+firetouchinterest(game.Players.LocalPlayer.Character.Head, part, 1)
+end
+end
+   end,
+})
+
+local Button = mainTab:CreateButton({
+   Name = "트롤들은 못 깨는 타워 (테러 강도 상)",
+   Callback = function()
+      local poss = {
+    Vector3.new(-34.8450928, 99.5898972, 38.1106415, 0, 0, -1, 0, 1, 0, 1, 0, 05),
+    Vector3.new(-34.8450928, 99.5899734, 24.9667969, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-34.8450928, 99.5898972, 10.8118877, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-19.1735916, 278.548401, 15.8672085, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-19.1735916, 278.548401, 27.9999886, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(-19.1735916, 278.548401, 39.1217041, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(83.4494934, 342.245514, 30.1392689, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(96.5933456, 341.234467, 30.1392689, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(70.3056488, 341.234467, 30.1392689, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+    Vector3.new(61.2060699, 340.223358, 30.1392689, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+}
+
+_G.Parts = {}
+
+for _, part in ipairs(workspace:GetChildren()) do
+    if part:IsA('BasePart') and table.find(poss, part.Position) then
+        warn(part)
+        table.insert(_G.Parts, part)
+    end
+end
+print('done!!')
+table.foreach(_G.Parts, print)
+
+
+while task.wait(.1) do
+for _, part in ipairs(_G.Parts) do
+firetouchinterest(game.Players.LocalPlayer.Character.Head, part, 0)
+task.wait(.1)
+firetouchinterest(game.Players.LocalPlayer.Character.Head, part, 1)
+end
+end
+   end,
+})

@@ -44,6 +44,12 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/regentcon/kill/refs/h
 end,
 })
 
+local Button = Tab:CreateButton({
+   Name = "파트 움직이기",
+   Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/regentcon/part-move/refs/heads/main/part-move"))()
+end,
+})
 
 local Button = Tab:CreateButton({
    Name = "칼로 다죽이기2(칼 꺼내기 Z,X,C,V)",

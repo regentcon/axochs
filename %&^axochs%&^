@@ -47,7 +47,7 @@ end,
 local Button = Tab:CreateButton({
    Name = "파트 움직이기",
    Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/regentcon/part-move/refs/heads/main/part-move"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/regentcon/part-move/refs/heads/main/part-move",true))()
 end,
 })
 

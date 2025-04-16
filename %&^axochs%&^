@@ -494,6 +494,15 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/DiosDi/VexonHub/refs/
 local Tab = Window:CreateTab("라이벌🔫", nil) -- Title, Image
 local Section = Tab:CreateSection("메인")
 
+
+local Button = Tab:CreateButton({
+   Name = "진짜 이거만 써라 ㅈㄴ좋다 씨발",
+   Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/regentcon/aimbot/refs/heads/main/aimbot"))()
+
+end,
+})
+
 local Button = Tab:CreateButton({
    Name = "무적(E홀드)",
    Callback = function()
